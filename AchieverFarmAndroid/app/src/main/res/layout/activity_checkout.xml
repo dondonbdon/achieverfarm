@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CheckoutActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true">
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/checkout"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView36"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/collection"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
+        <TextView
+            android:id="@+id/checkoutCollectionPoint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rect_10dp"
+            android:backgroundTint="@color/grey10"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="20dp"
+            android:text="@string/collection_point"
+            app:layout_constraintTop_toBottomOf="@+id/textView36" />
+
+        <TextView
+            android:id="@+id/checkoutCollectionDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/rect_10dp"
+            android:backgroundTint="@color/grey10"
+            android:fontFamily=""
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="20dp"
+            android:text="@string/collection_date"
+            app:layout_constraintEnd_toStartOf="@+id/checkoutCollectionTime"
+            app:layout_constraintStart_toStartOf="@+id/checkoutCollectionPoint"
+            app:layout_constraintTop_toBottomOf="@+id/checkoutCollectionPoint" />
+
+        <TextView
+            android:id="@+id/checkoutCollectionTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rect_10dp"
+            android:backgroundTint="@color/grey10"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="20dp"
+            android:text="@string/collection_time"
+            app:layout_constraintEnd_toEndOf="@+id/checkoutCollectionPoint"
+            app:layout_constraintStart_toEndOf="@+id/checkoutCollectionDate"
+            app:layout_constraintTop_toBottomOf="@+id/checkoutCollectionPoint" />
+
+
+        <TextView
+            android:id="@+id/textView44"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/your_items"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checkoutCollectionDate" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/checkoutItemRecycler"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="@+id/checkoutCollectionTime"
+            app:layout_constraintStart_toStartOf="@+id/checkoutCollectionDate"
+            app:layout_constraintTop_toBottomOf="@+id/textView44" />
+
+        <TextView
+            android:id="@+id/checkoutViewCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/view_all_items"
+            app:layout_constraintStart_toStartOf="@+id/checkoutItemRecycler"
+            app:layout_constraintTop_toBottomOf="@+id/checkoutItemRecycler" />
+
+
+        <TextView
+            android:id="@+id/textView47"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/payment"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/checkoutItemRecycler"
+            app:layout_constraintTop_toBottomOf="@+id/checkoutViewCart" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/currentOrderHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rect_10dp"
+            android:backgroundTint="@color/grey10"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/textView47">
+
+            <TextView
+                android:id="@+id/checkoutAddPromoCode"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/rect_top_10dp"
+                android:backgroundTint="@color/grey15"
+                android:fontFamily="@font/fo_biko_regular"
+                android:gravity="center_vertical"
+                android:paddingVertical="15dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="@string/add_promo_code"
+                android:visibility="visible"
+                app:drawableEndCompat="@drawable/ic_plus"
+                app:drawableTint="@color/black_white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+
+                android:text="@string/item_total"
+                android:textColor="@color/grey"
+                app:layout_constraintBottom_toTopOf="@+id/textView48"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkoutAddPromoCode" />
+
+            <TextView
+                android:id="@+id/textView48"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tax_10"
+                android:layout_marginVertical="10dp"
+                android:textColor="@color/grey"
+                app:layout_constraintBottom_toTopOf="@+id/textView30"
+                app:layout_constraintStart_toStartOf="@+id/textView26"
+                app:layout_constraintTop_toBottomOf="@+id/textView26" />
+
+            <TextView
+                android:id="@+id/checkoutTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/zero_dollars"
+
+                app:layout_constraintBottom_toTopOf="@+id/checkoutTax"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkoutAddPromoCode" />
+
+            <TextView
+                android:id="@+id/checkoutTax"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginVertical="10dp"
+                android:text="@string/tax"
+                app:layout_constraintBottom_toTopOf="@+id/checkoutGrandTotal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkoutTotal" />
+
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="@string/total"
+                android:textColor="@color/grey"
+                android:textSize="17.5sp"
+                app:layout_constraintBottom_toTopOf="@+id/checkoutPaymentMethod"
+                app:layout_constraintStart_toStartOf="@+id/textView26"
+                app:layout_constraintTop_toBottomOf="@+id/textView48" />
+
+            <TextView
+                android:id="@+id/checkoutGrandTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/grand_total"
+                android:textSize="17.5sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/checkoutPaymentMethod"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkoutTax" />
+
+            <TextView
+                android:id="@+id/checkoutPaymentMethod"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/rect_pending_order_10dp"
+                android:backgroundTint="@color/grey15"
+                android:fontFamily="@font/fo_biko_regular"
+                android:gravity="center_vertical"
+                android:paddingVertical="15dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="@string/select_payment_method"
+                app:drawableEndCompat="@drawable/ic_baseline_arrow_forward_ios_24"
+                app:drawableTint="@color/black_white"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/checkoutCompleteOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/rect_10dp"
+            android:backgroundTint="@color/m2"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="20dp"
+            android:text="@string/complete_order"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/currentOrderHolder" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

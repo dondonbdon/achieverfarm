@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OrderActivity">
+
+    <TextView
+        android:id="@+id/textView38"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="120dp"
+        android:text="@string/your_order"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout9"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rect_10dp"
+        android:backgroundTint="@color/blue_grey"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/textView38">
+
+        <TextView
+            android:id="@+id/textView39"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/orderid"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/orderId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@+id/textView39"
+            app:layout_constraintTop_toTopOf="@+id/textView39" />
+
+        <TextView
+            android:id="@+id/orderStatus"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="30dp"
+            android:autoSizeTextType="uniform"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/order_status"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/orderShowCode"
+            app:layout_constraintStart_toStartOf="@+id/textView39"
+            app:layout_constraintTop_toBottomOf="@+id/textView39" />
+
+        <TextView
+            android:id="@+id/orderShowCode"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/rect_10dp"
+            android:backgroundTint="@color/blue_grey_2"
+            android:gravity="center"
+            android:paddingHorizontal="25dp"
+            android:text="@string/show_nqr_code"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/currentOrderHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rect_10dp"
+        android:backgroundTint="@color/blue_grey"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout9">
+
+        <TextView
+            android:id="@+id/textView26"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/collection_point"
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/orderCollection"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:maxLines="2"
+            android:text="@string/location"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView26"
+            app:layout_constraintTop_toTopOf="@+id/textView26" />
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/collection_time"
+            android:textColor="@color/grey"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/orderTrack"
+            app:layout_constraintStart_toStartOf="@+id/textView26"
+            app:layout_constraintTop_toBottomOf="@+id/orderCollection" />
+
+        <TextView
+            android:id="@+id/orderDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/date_time"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/orderTrack"
+            app:layout_constraintStart_toEndOf="@+id/textView30"
+            app:layout_constraintTop_toTopOf="@+id/textView30" />
+
+        <TextView
+            android:id="@+id/orderTrack"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/rect_pending_order_10dp"
+            android:backgroundTint="@color/blue_grey_2"
+            android:ellipsize="end"
+            android:fontFamily="@font/fo_biko_regular"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:paddingVertical="10dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="@string/get_directions"
+            app:drawableEndCompat="@drawable/ic_baseline_arrow_forward_ios_24"
+            app:drawableTint="@color/black_white"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/orderItemRecycler"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="@+id/currentOrderHolder"
+        app:layout_constraintStart_toStartOf="@+id/currentOrderHolder"
+        app:layout_constraintTop_toBottomOf="@+id/currentOrderHolder" />
+
+    <TextView
+        android:id="@+id/orderViewAllItems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/view_all_items"
+        app:layout_constraintStart_toStartOf="@+id/orderItemRecycler"
+        app:layout_constraintTop_toBottomOf="@+id/orderItemRecycler" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rect_10dp"
+        android:backgroundTint="@color/grey10"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="15dp"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@+id/orderViewAllItems">
+
+        <TextView
+            android:id="@+id/textView33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/item_total"
+            android:textColor="@color/grey"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/change_requested"
+            android:textColor="@color/grey"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:text="@string/payment_method"
+            android:textColor="@color/grey"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView32"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView33" />
+
+        <TextView
+            android:id="@+id/orderTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/amount"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/orderPaymentMethod"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/orderPaymentMethod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:text="@string/method"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/OrderChangeRequested"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/orderTotal" />
+
+        <TextView
+            android:id="@+id/OrderChangeRequested"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/orderPaymentMethod" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/have_any_questions"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout8"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout8" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/orderCallUs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rect_10dp"
+        android:backgroundTint="@color/grey10"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView37">
+
+        <FrameLayout
+            android:id="@+id/frameLayout4"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/rect_10dp"
+            android:backgroundTint="@color/grey15"
+            android:clickable="false"
+            android:focusable="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:contentDescription="@string/contact_us"
+                android:src="@drawable/ic_phone" />
+
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:text="@string/drop_us_a_call"
+            app:layout_constraintBottom_toBottomOf="@+id/frameLayout4"
+            app:layout_constraintStart_toEndOf="@+id/frameLayout4"
+            app:layout_constraintTop_toTopOf="@+id/frameLayout4" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

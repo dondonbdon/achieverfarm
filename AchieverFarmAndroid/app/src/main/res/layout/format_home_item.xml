@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/formatHomeItemHolder"
+    android:layout_width="150dp"
+    android:layout_height="200dp"
+    android:layout_marginStart="20dp"
+    android:background="@drawable/rect_15dp"
+    android:backgroundTint="@color/grey10"
+    android:clickable="true"
+    android:focusable="true"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/formatHomeItemProductImage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/rect_5dp"
+        android:backgroundTint="@color/grey15"
+        android:contentDescription="@null"
+        app:layout_constraintHeight_percent="0.55"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/formatHomeItemProductName"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/fo_biko_regular"
+        android:maxLines="3"
+        android:text="@string/product_name"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayoutCompat"
+        app:layout_constraintTop_toBottomOf="@+id/formatHomeItemProductImage"
+        tools:layout_editor_absoluteX="10dp" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayoutCompat2"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/formatHomeItemPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fo_biko_bold"
+            android:text="@string/zero_dollars"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/formatHomeItemPerKG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fo_biko_regular"
+            android:text="@string/per_kg"
+            android:textColor="@color/grey"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linearLayoutCompat">
+
+        <ImageView
+            android:id="@+id/formatHomeItemType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2.5dp"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_fresh_produce" />
+
+        <ImageView
+            android:id="@+id/formatHomeItemGrowTech"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_shed_net" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

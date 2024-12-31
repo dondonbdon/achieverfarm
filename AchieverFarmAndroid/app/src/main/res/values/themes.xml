@@ -1,0 +1,46 @@
+<resources>
+
+    <style name="Theme.AchieverFarm" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/m1</item>
+        <item name="colorPrimaryVariant">@color/m2</item>
+        <item name="colorOnPrimary">@color/m2</item>
+
+        <item name="android:windowBackground">@color/white</item>
+        <item name="colorSecondary">@color/m2</item>
+        <item name="colorSecondaryVariant">@color/m3</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textColorSecondary">@color/black</item>
+        <item name="android:textColorTertiary">@color/black</item>
+        <item name="android:textColorPrimaryInverse">@color/black</item>
+        <item name="android:textColorSecondaryInverse">@color/black</item>
+        <item name="android:textColorTertiaryInverse">@color/black</item>
+
+        <item name="android:statusBarColor">@color/m2</item>
+        <item name="android:navigationBarColor">@color/grey10</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+        <item name="fontFamily">@font/fo_biko_regular</item>
+        <item name="editTextStyle">@style/CustomEditText</item>
+    </style>
+
+    <style name="CustomEditText" parent="Widget.AppCompat.EditText">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="CustomEditTextStyle">
+        <item name="android:background">@drawable/rect_10dp</item>
+        <item name="android:backgroundTint">@color/grey10</item>
+        <item name="android:drawableStart">@drawable/ic_nav_search</item>
+        <item name="android:drawableTint">@color/grey</item>
+        <item name="android:drawablePadding">10dp</item>
+    </style>
+
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/grey5</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_achiever_farm_logo</item>
+        <item name="postSplashScreenTheme">@style/Theme.AchieverFarm</item>
+    </style>
+</resources>

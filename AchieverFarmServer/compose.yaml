@@ -1,0 +1,47 @@
+services:
+  achieverfarm:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: achieverfarm
+    ports:
+      - "7070:7070"
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+      - MONGO_URI=mongodb://mongodb:27017/achieverfarm
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - mongodb
+      - redis
+    networks:
+      - achieverfarm-network
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb-data:/data/db
+    networks:
+      - achieverfarm-network
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - achieverfarm-network
+    volumes:
+      - redis-data:/data
+
+volumes:
+  mongodb-data:
+  redis-data:
+
+networks:
+  achieverfarm-network:
+    driver: bridge
+

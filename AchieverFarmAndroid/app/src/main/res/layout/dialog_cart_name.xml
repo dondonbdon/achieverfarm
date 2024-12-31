@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="20dp"
+    android:background="@drawable/rect_20dp"
+    android:backgroundTint="@color/grey10">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/give_your_cart_a_cool_name"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/dialogCartNameEdit"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:autofillHints="@null"
+        android:background="@color/transparent"
+        android:gravity="center_vertical"
+        android:hint="@string/e_g_party_list"
+        android:inputType="text"
+        android:paddingHorizontal="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/dialogCartNameCancel"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rect_bottom_left_20dp"
+        android:backgroundTint="@color/grey15"
+        android:gravity="center"
+        android:text="@string/cancel"
+        app:layout_constraintEnd_toStartOf="@+id/dialogCartNameSave"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialogCartNameEdit" />
+
+    <TextView
+        android:id="@+id/dialogCartNameSave"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rect_bottom_right_20dp"
+        android:backgroundTint="@color/m2"
+        android:gravity="center"
+        android:text="@string/save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dialogCartNameCancel"
+        app:layout_constraintTop_toBottomOf="@+id/dialogCartNameEdit" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/cartProgressIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:visibility="invisible"
+        app:indicatorSize="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:trackThickness="4dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
